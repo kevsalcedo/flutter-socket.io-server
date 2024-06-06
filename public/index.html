@@ -6,7 +6,7 @@
     <title>SocketServer</title>
   </head>
   <body>
-    <h1>Acceso denegado c:D</h1>
+    <h1>Acceso denegado :D</h1>
 
     <script src="socket.io/socket.io.js"></script>
 
@@ -25,6 +25,15 @@
 
       socket.on("mensaje", function (payload) {
         console.log("Escuchando", payload);
+      });
+
+      socket.on("nuevo-mensaje", function (payload) {
+        console.log("from Flutter", payload);
+      });
+
+      socket.on("active-bands", function (payload) {
+        console.clear();
+        console.table(payload);
       });
     </script>
   </body>
